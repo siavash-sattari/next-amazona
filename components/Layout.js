@@ -1,16 +1,28 @@
 import Head from 'next/head';
 import Link from 'next/link';
-import React, { useContext, useEffect, useState } from 'react';
+import { useContext, useEffect, useState } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import { Store } from '../utils/Store';
 
 export default function Layout({ title, children }) {
   const { state } = useContext(Store);
-  const { cart } = state;
+  const { cart, userInfo } = state;
 
+  const [hasMounted, setHasMounted] = useState(false);
   const [cartItemsCount, setCartItemsCount] = useState(0);
+
   useEffect(() => {
     setCartItemsCount(cart.cartItems.reduce((a, c) => a + c.quantity, 0));
   }, [cart.cartItems]);
+
+  // Fix Error : Hydration failed because the initial UI does not match what was rendered on the server.
+  useEffect(() => {
+    setHasMounted(true);
+  }, []);
+  if (!hasMounted) {
+    return null;
+  }
 
   return (
     <>
@@ -18,7 +30,7 @@ export default function Layout({ title, children }) {
         <title>{title ? title + ' - Amazona' : 'Amazona'}</title>
         <meta name='description' content='Ecommerce Website' />
       </Head>
-
+      <ToastContainer position='top-right' limit={1} />
       <div className='flex min-h-screen flex-col justify-between '>
         <header>
           <nav className='flex h-12 items-center px-4 justify-between shadow-md'>
@@ -34,9 +46,13 @@ export default function Layout({ title, children }) {
                   )}
                 </a>
               </Link>
-              <Link href='/login'>
-                <a className='p-2 text-lg'>Login</a>
-              </Link>
+              {userInfo ? (
+                userInfo.name
+              ) : (
+                <Link href='/login'>
+                  <a className='p-2 text-lg'>Login</a>
+                </Link>
+              )}
             </div>
           </nav>
         </header>

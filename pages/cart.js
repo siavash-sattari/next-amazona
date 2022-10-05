@@ -1,8 +1,8 @@
-import { useContext } from 'react';
-import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import Image from 'next/image';
 import dynamic from 'next/dynamic';
+import { useRouter } from 'next/router';
+import { useContext } from 'react';
 import { FiTrash2 } from 'react-icons/fi';
 import Layout from '../components/Layout';
 import { Store } from '../utils/Store';

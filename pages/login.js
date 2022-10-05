@@ -1,17 +1,48 @@
 import Link from 'next/link';
-import React from 'react';
+import { useRouter } from 'next/router';
+import { useContext, useEffect } from 'react';
+
+import axios from 'axios';
+import Cookies from 'js-cookie';
+import { toast } from 'react-toastify';
 import { useForm } from 'react-hook-form';
+
 import Layout from '../components/Layout';
+import { Store } from '../utils/Store';
 
 export default function LoginScreen() {
+  const router = useRouter();
+  const { redirect } = router.query; // login?redirect=/shipping
+  const { state, dispatch } = useContext(Store);
+  const { userInfo } = state;
+
+  useEffect(() => {
+    if (userInfo) {
+      router.push('/');
+    }
+  }, []);
+
   const {
     handleSubmit,
     register,
     formState: { errors }
   } = useForm();
-  const submitHandler = ({ email, password }) => {
-    console.log(email, password);
+
+  const submitHandler = async ({ email, password }) => {
+    try {
+      const { data } = await axios.post('/api/auth/login', {
+        email,
+        password
+      });
+
+      dispatch({ type: 'USER_LOGIN', payload: data });
+      Cookies.set('userInfo', JSON.stringify(data));
+      router.push(redirect || '/');
+    } catch (err) {
+      toast.error(err.response.data ? err.response.data.message : err.message);
+    }
   };
+
   return (
     <Layout title='Login'>
       <form className='mx-auto max-w-screen-md' onSubmit={handleSubmit(submitHandler)}>
@@ -29,7 +60,8 @@ export default function LoginScreen() {
             })}
             className='w-full'
             id='email'
-            autoFocus></input>
+            autoFocus
+          />
           {errors.email && <div className='text-red-500'>{errors.email.message}</div>}
         </div>
         <div className='mb-4'>
@@ -42,7 +74,8 @@ export default function LoginScreen() {
             })}
             className='w-full'
             id='password'
-            autoFocus></input>
+            autoFocus
+          />
           {errors.password && <div className='text-red-500 '>{errors.password.message}</div>}
         </div>
         <div className='mb-4 '>
