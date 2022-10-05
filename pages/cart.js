@@ -11,6 +11,7 @@ function CartScreen() {
   const router = useRouter();
   const { state, dispatch } = useContext(Store);
   const {
+    userInfo,
     cart: { cartItems }
   } = state;
 
@@ -21,6 +22,14 @@ function CartScreen() {
   const updateCartHandler = (item, qty) => {
     const quantity = Number(qty);
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...item, quantity } });
+  };
+
+  const redirectUser = () => {
+    if (userInfo) {
+      router.push('/shipping');
+    } else {
+      router.push('/login');
+    }
   };
 
   return (
@@ -82,7 +91,7 @@ function CartScreen() {
                 </div>
               </li>
               <li>
-                <button onClick={() => router.push('login?redirect=/shipping')} className='primary-button w-full'>
+                <button onClick={redirectUser} className='primary-button w-full'>
                   Check Out
                 </button>
               </li>
