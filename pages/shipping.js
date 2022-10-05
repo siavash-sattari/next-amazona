@@ -18,11 +18,6 @@ export default function ShippingScreen() {
   const { userInfo, cart } = state;
   const { shippingAddress } = cart;
 
-  // const {
-  //   userInfo,
-  //   cart: { shippingAddress }
-  // } = state;
-
   const router = useRouter();
 
   useEffect(() => {
