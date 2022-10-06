@@ -3,14 +3,14 @@ import User from '../../../models/User';
 import Order from '../../../models/Order';
 import Product from '../../../models/Product';
 import db from '../../../utils/db';
-import { isAuth } from '../../../utils/auth';
+import { isAuth,isAdmin  } from '../../../utils/auth';
 import { onError } from '../../../utils/error';
 
 const handler = nc({
   onError
 });
 
-handler.use(isAuth);
+handler.use(isAuth,isAdmin );
 
 handler.get(async (req, res) => {
   await db.connect();
