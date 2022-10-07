@@ -23,8 +23,6 @@ function reducer(state, action) {
       return { ...state, loadingUpdate: false, errorUpdate: '' };
     case 'UPDATE_FAIL':
       return { ...state, loadingUpdate: false, errorUpdate: action.payload };
-    case 'USER_LOGIN':
-      return { ...state, userInfo: action.payload };
     default:
       return state;
   }
