@@ -18,7 +18,7 @@ export default function ProductItem({ product, addToCartHandler }) {
         <Rating value={product.rating} />
         <p className='mb-2'>{product.brand}</p>
         <p>${product.price}</p>
-        <button className='primary-button' type='button' onClick={() => addToCartHandler(product)}>
+        <button className='primary-button font-semibold' type='button' onClick={() => addToCartHandler(product)}>
           Add to cart
         </button>
       </div>

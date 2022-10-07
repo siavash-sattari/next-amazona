@@ -17,6 +17,7 @@ export default function Layout({ title, children }) {
   const { state, dispatch } = useContext(Store);
   const { cart, userInfo } = state;
 
+  const [query, setQuery] = useState('');
   const [hasMounted, setHasMounted] = useState(false);
   const [cartItemsCount, setCartItemsCount] = useState(0);
 
@@ -39,6 +40,15 @@ export default function Layout({ title, children }) {
     router.push('/');
   };
 
+  const queryChangeHandler = e => {
+    setQuery(e.target.value);
+  };
+
+  const submitHandler = e => {
+    e.preventDefault();
+    router.push(`/search?query=${query}`);
+  };
+
   return (
     <>
       <Head>
@@ -48,10 +58,18 @@ export default function Layout({ title, children }) {
       <ToastContainer position='top-right' limit={1} />
       <div className='flex min-h-screen flex-col justify-between '>
         <header>
-          <nav className='flex h-12 items-center px-4 justify-between shadow-md'>
+          <nav className='flex h-12 items-center px-4 py-10 justify-between shadow-md'>
             <Link href='/'>
               <a className='text-xl font-bold'>amazona</a>
             </Link>
+            <form onSubmit={submitHandler}>
+              <div className='flex items-center justify-center '>
+                <div className='flex border-2 border-gray-200 rounded'>
+                  <input type='text' className='px-4 w-80' placeholder='Search...' onChange={queryChangeHandler} />
+                  <button className='px-4 text-white bg-[#2E4EB7] border-l '>Search</button>
+                </div>
+              </div>
+            </form>
             <div>
               <Link href='/cart'>
                 <a className='p-2'>
