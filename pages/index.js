@@ -2,8 +2,8 @@ import { useContext } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import db from '../utils/db';
-import { Store } from '../utils/Store';
-import Product from '../models/Product';
+import { Store } from '../utils/store';
+import Product from '../models/product';
 import Layout from '../components/Layout';
 import ProductItem from '../components/ProductItem';
 

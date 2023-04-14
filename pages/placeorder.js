@@ -7,7 +7,7 @@ import axios from 'axios';
 import Cookies from 'js-cookie';
 import { toast } from 'react-toastify';
 
-import { Store } from '../utils/Store';
+import { Store } from '../utils/store';
 import { getError } from '../utils/error';
 import Layout from '../components/Layout';
 import CheckoutWizard from '../components/CheckoutWizard';

@@ -4,7 +4,7 @@ import { useContext, useEffect, useReducer } from 'react';
 import axios from 'axios';
 import { Bar } from 'react-chartjs-2';
 import { Chart as ChartJS, CategoryScale, LinearScale, BarElement, Title, Tooltip, Legend } from 'chart.js';
-import { Store } from '../../utils/Store';
+import { Store } from '../../utils/store';
 import { getError } from '../../utils/error';
 import Layout from '../../components/Layout';
 

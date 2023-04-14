@@ -8,7 +8,7 @@ import { toast } from 'react-toastify';
 import { useForm } from 'react-hook-form';
 
 import Layout from '../components/Layout';
-import { Store } from '../utils/Store';
+import { Store } from '../utils/store';
 
 export default function LoginScreen() {
   const router = useRouter();

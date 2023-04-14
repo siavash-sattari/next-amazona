@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useContext, useEffect, useState } from 'react';
 import Cookies from 'js-cookie';
 import { toast } from 'react-toastify';
-import { Store } from '../utils/Store';
+import { Store } from '../utils/store';
 import Layout from '../components/Layout';
 import CheckoutWizard from '../components/CheckoutWizard';
 

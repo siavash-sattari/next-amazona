@@ -1,7 +1,7 @@
 import nc from 'next-connect';
 import User from '../../../models/user';
-import Order from '../../../models/Order';
-import Product from '../../../models/Product';
+import Order from '../../../models/order';
+import Product from '../../../models/product';
 import db from '../../../utils/db';
 import { isAuth,isAdmin  } from '../../../utils/auth';
 import { onError } from '../../../utils/error';
