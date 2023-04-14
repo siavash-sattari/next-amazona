@@ -1,5 +1,5 @@
 import nc from 'next-connect';
-import User from '../../../models/User';
+import User from '../../../models/user';
 import Order from '../../../models/Order';
 import Product from '../../../models/Product';
 import db from '../../../utils/db';
