@@ -59,7 +59,7 @@ function AdminUsers() {
     } else {
       fetchData();
     }
-  }, [successDelete]);
+  }, [router, successDelete, userInfo]);
 
   const deleteHandler = async userId => {
     if (!window.confirm('Are you sure?')) {

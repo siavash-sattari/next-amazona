@@ -29,7 +29,7 @@ const ratings = [1, 2, 3, 4, 5];
 const Search = props => {
   const router = useRouter();
   const { query = 'all', category = 'all', brand = 'all', price = 'all', rating = 'all', sort = 'featured' } = router.query;
-  const { products, countProducts, categories, brands, pages } = props;
+  const { products, countProducts, categories, brands } = props;
 
   const filterSearch = ({ page, category, brand, sort, min, max, searchQuery, price, rating }) => {
     const path = router.pathname;
@@ -52,10 +52,6 @@ const Search = props => {
 
   const categoryHandler = e => {
     filterSearch({ category: e.target.value });
-  };
-
-  const pageHandler = (e, page) => {
-    filterSearch({ page });
   };
 
   const brandHandler = e => {

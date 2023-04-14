@@ -31,7 +31,7 @@ export default function PlaceOrderScreen() {
     if (!paymentMethod) {
       router.push('/payment');
     }
-  }, [paymentMethod]);
+  }, [paymentMethod, router]);
 
   const [loading, setLoading] = useState(false);
 

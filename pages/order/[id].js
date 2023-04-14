@@ -97,7 +97,7 @@ function OrderScreen() {
       };
       loadPaypalScript();
     }
-  }, [order, orderId, paypalDispatch, successPay, successDeliver]);
+  }, [order, orderId, paypalDispatch, successPay, successDeliver, userInfo, router]);
 
   const { shippingAddress, paymentMethod, orderItems, itemsPrice, taxPrice, shippingPrice, totalPrice, isPaid, paidAt, isDelivered, deliveredAt } =
     order;

@@ -46,7 +46,7 @@ export default function AdminOrderScreen() {
       }
     };
     fetchData();
-  }, []);
+  }, [router, userInfo]);
 
   return (
     <Layout title='Admin Dashboard'>

@@ -68,7 +68,7 @@ function UserEdit() {
       };
       fetchData();
     }
-  }, [userId]);
+  }, [router, setValue, userId, userInfo]);
 
   const submitHandler = async ({ name, email, password }) => {
     try {

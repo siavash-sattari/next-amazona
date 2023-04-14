@@ -28,7 +28,7 @@ export default function ProfileScreen() {
     }
     setValue('name', userInfo.name);
     setValue('email', userInfo.email);
-  }, [userInfo]);
+  }, [router, setValue, userInfo]);
 
   const submitHandler = async ({ name, email, password }) => {
     try {

@@ -20,7 +20,7 @@ export default function PaymentScreen() {
       return router.push('/shipping');
     }
     setSelectedPaymentMethod(paymentMethod || '');
-  }, [paymentMethod]);
+  }, [paymentMethod, router, shippingAddress.address]);
 
   const submitHandler = e => {
     e.preventDefault();

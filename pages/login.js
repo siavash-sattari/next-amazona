@@ -20,7 +20,7 @@ export default function LoginScreen() {
     if (userInfo) {
       router.push('/');
     }
-  }, []);
+  }, [router, userInfo]);
 
   const {
     handleSubmit,

@@ -83,7 +83,7 @@ function ProductEdit() {
       };
       fetchData();
     }
-  }, [productId, setValue]);
+  }, [productId, router, setValue, userInfo]);
 
   const submitHandler = async ({ name, slug, price, category, image, brand, countInStock, description }) => {
     try {

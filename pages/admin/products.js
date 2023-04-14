@@ -65,7 +65,7 @@ function AdminProdcuts() {
     } else {
       fetchData();
     }
-  }, [successDelete]);
+  }, [router, successDelete, userInfo]);
 
   const createHandler = async () => {
     try {

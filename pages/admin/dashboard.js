@@ -59,7 +59,7 @@ function AdminDashboard() {
       }
     };
     fetchData();
-  }, []);
+  }, [router, userInfo]);
 
   const data = {
     labels: summary.salesData.map(x => x._id), // 2022/01 2022/03
