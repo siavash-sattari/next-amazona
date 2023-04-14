@@ -1,6 +1,6 @@
 import db from '../../utils/db';
 import data from '../../utils/data';
-import User from '../../models/User';
+import User from '../../models/user';
 import Product from '../../models/Product';
 
 const handler = async (req, res) => {
