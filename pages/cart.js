@@ -6,7 +6,7 @@ import { useContext } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { FiTrash2 } from 'react-icons/fi';
-import { Store } from '../utils/Store';
+import { Store } from '../utils/store';
 import Layout from '../components/Layout';
 
 function CartScreen() {

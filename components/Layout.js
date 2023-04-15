@@ -9,7 +9,7 @@ import { Menu } from '@headlessui/react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-import { Store } from '../utils/Store';
+import { Store } from '../utils/store';
 import DropdownLink from './DropdownLink';
 
 export default function Layout({ title, children }) {

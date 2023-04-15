@@ -2,7 +2,7 @@ import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { useContext, useEffect, useReducer } from 'react';
 import axios from 'axios';
-import { Store } from '../../utils/Store';
+import { Store } from '../../utils/store';
 import { getError } from '../../utils/error';
 import Layout from '../../components/Layout';
 

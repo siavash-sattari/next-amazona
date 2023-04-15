@@ -4,7 +4,7 @@ import { useContext, useEffect, useReducer } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import { useForm } from 'react-hook-form';
-import { Store } from '../../../utils/Store';
+import { Store } from '../../../utils/store';
 import { getError } from '../../../utils/error';
 import Layout from '../../../components/Layout';
 

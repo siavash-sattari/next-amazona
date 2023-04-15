@@ -5,7 +5,7 @@ import { useRouter } from 'next/router';
 import { useEffect, useReducer, useContext } from 'react';
 import { toast } from 'react-toastify';
 import { PayPalButtons, usePayPalScriptReducer } from '@paypal/react-paypal-js';
-import { Store } from '../../utils/Store';
+import { Store } from '../../utils/store';
 import { getError } from '../../utils/error';
 import Layout from '../../components/Layout';
 

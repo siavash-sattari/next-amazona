@@ -2,7 +2,7 @@ import { useRouter } from 'next/router';
 import { useContext, useEffect } from 'react';
 import Cookies from 'js-cookie';
 import { useForm } from 'react-hook-form';
-import { Store } from '../utils/Store';
+import { Store } from '../utils/store';
 import Layout from '../components/Layout';
 import CheckoutWizard from '../components/CheckoutWizard';
 

@@ -3,7 +3,7 @@ import nextConnect from 'next-connect';
 import db from '../../../../utils/db';
 import { isAuth } from '../../../../utils/auth';
 import { onError } from '../../../../utils/error';
-import Product from '../../../../models/Product';
+import Product from '../../../../models/product';
 
 const handler = nextConnect({
   onError

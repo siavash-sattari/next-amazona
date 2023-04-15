@@ -2,7 +2,7 @@ import nc from 'next-connect';
 import db from '../../../../utils/db';
 import { onError } from '../../../../utils/error';
 import { isAuth, isAdmin } from '../../../../utils/auth';
-import Product from '../../../../models/Product';
+import Product from '../../../../models/product';
 
 const handler = nc({
   onError

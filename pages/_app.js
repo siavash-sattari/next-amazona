@@ -1,5 +1,5 @@
 import '../styles/globals.css';
-import { StoreProvider } from '../utils/Store';
+import { StoreProvider } from '../utils/store';
 import { PayPalScriptProvider } from '@paypal/react-paypal-js';
 
 function MyApp({ Component, pageProps }) {

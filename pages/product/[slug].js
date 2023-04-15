@@ -6,9 +6,9 @@ import { useContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { toast } from 'react-toastify';
 import db from '../../utils/db';
-import { Store } from '../../utils/Store';
+import { Store } from '../../utils/store';
 import { getError } from '../../utils/error';
-import Product from '../../models/Product';
+import Product from '../../models/product';
 import Layout from '../../components/Layout';
 import Rating from '../../components/Rating';
 
