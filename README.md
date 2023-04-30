@@ -1,6 +1,6 @@
 # Next-Amazona
 
-Build Fullstack ECommerce Website Like Amazon With Nextjs
+Fullstack e-commerce website like amazon with Nextjs
 
 
 ## Client Demo
