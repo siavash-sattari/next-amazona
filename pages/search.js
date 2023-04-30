@@ -6,6 +6,7 @@ import { Store } from '../utils/store';
 import Product from '../models/product';
 import Layout from '../components/Layout';
 import ProductItem from '../components/ProductItem';
+import { toast } from 'react-toastify';
 
 const PAGE_SIZE = 10;
 
@@ -83,6 +84,11 @@ const Search = props => {
     dispatch({ type: 'CART_ADD_ITEM', payload: { ...product, quantity } });
   };
 
+  const resetFilters = () => {
+    router.push('/search');
+    toast.success('Filters deleted.');
+  };
+
   return (
     <Layout title='Search'>
       <div className='grid md:grid-cols-5 md:gap-5'>
@@ -135,7 +141,7 @@ const Search = props => {
           </li>
           <li className='mt-5'>
             {(query !== 'all' && query !== '') || category !== 'all' || brand !== 'all' || rating !== 'all' || price !== 'all' ? (
-              <button onClick={() => router.push('/search')} className='primary-button w-full font-semibold'>
+              <button onClick={resetFilters} className='primary-button w-full font-semibold'>
                 Reset Filters
               </button>
             ) : null}

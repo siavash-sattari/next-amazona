@@ -37,6 +37,7 @@ export default function LoginScreen() {
 
       dispatch({ type: 'USER_LOGIN', payload: data });
       Cookies.set('userInfo', JSON.stringify(data));
+      toast.success('You have logged in successfully');
       router.push(redirect || '/');
     } catch (err) {
       toast.error(err.response.data ? err.response.data.message : err.message);

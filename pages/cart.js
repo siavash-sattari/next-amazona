@@ -19,6 +19,7 @@ function CartScreen() {
 
   const removeItemHandler = item => {
     dispatch({ type: 'CART_REMOVE_ITEM', payload: item });
+    toast.error('Product deleted from the cart');
   };
 
   const updateCartHandler = async (item, qty) => {

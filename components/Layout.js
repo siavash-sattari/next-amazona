@@ -6,7 +6,7 @@ import { HiChevronDown } from 'react-icons/hi';
 
 import Cookies from 'js-cookie';
 import { Menu } from '@headlessui/react';
-import { ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 import { Store } from '../utils/store';
@@ -35,6 +35,7 @@ export default function Layout({ title, children }) {
 
   const logoutClickHandler = () => {
     dispatch({ type: 'USER_LOGOUT' });
+    toast.success('You have logout successfully');
     Cookies.remove('userInfo');
     Cookies.remove('cart');
     router.push('/');
@@ -55,7 +56,6 @@ export default function Layout({ title, children }) {
         <title>{title ? title + ' - Amazona' : 'Amazona'}</title>
         <meta name='description' content='Ecommerce Website' />
       </Head>
-      <ToastContainer position='top-right' limit={1} />
       <div className='flex min-h-screen flex-col justify-between '>
         <header>
           <nav className='flex h-12 items-center px-4 py-10 justify-between shadow-md'>
